@@ -36,6 +36,6 @@ VALUES
 
 SELECT o_id, o_date,o_total_price FROM `order`;
 
-SELECT * FROM product p
-JOIN `order` o 
-ON c.o_id= p.o_id
+-- SELECT * FROM product p
+-- JOIN `order` o 
+-- ON c.o_id= p.o_id
