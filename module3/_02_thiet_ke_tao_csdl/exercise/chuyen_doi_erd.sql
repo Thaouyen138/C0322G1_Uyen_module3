@@ -1,21 +1,21 @@
 CREATE DATABASE quan_ly_don_hang;
 USE quan_ly_don_hang;
+CREATE TABLE nha_cung_cap
+(
+ma_nha_cung_cap INT PRIMARY KEY AUTO_INCREMENT,
+ten_nha_cung_cap VARCHAR(45),
+dia_chi VARCHAR(45)
+);
 
 CREATE TABLE sdt
 (
 id_sdt INT PRIMARY KEY AUTO_INCREMENT,
 dt_ban VARCHAR(45),
-dt_di_dong VARCHAR(45)
+dt_di_dong VARCHAR(45),
+ma_nha_cung_cap INT,
+FOREIGN KEY(ma_nha_cung_cap) REFERENCES nha_cung_cap(ma_nha_cung_cap)
 );
 
-CREATE TABLE nha_cung_cap
-(
-ma_nha_cung_cap INT PRIMARY KEY AUTO_INCREMENT,
-ten_nha_cung_cap VARCHAR(45),
-dia_chi VARCHAR(45),
-id_sdt INT,
-FOREIGN KEY (id_sdt) REFERENCES sdt(id_sdt)
-);
 
 CREATE TABLE don_dat_hang
 (
