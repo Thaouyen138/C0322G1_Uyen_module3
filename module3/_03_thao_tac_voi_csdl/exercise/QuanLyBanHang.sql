@@ -44,7 +44,7 @@ JOIN customer c ON o.c_id=c.c_id ;
 SELECT  *  FROM  customer c
 WHERE c.c_id NOT IN (SELECT c.c_id FROM `order`);
 
-SELECT   o.o_id,o_date, p.p_name AS "tên sản phẩm" , sum(p.p_price * od.od_qty) AS "giá bán từng loại" 
+SELECT   o.o_id, o_date, p.p_name AS "tên sản phẩm", sum(p.p_price * od.od_qty) AS "giá bán từng loại" 
 FROM order_detail od 
 JOIN product p ON p.p_id = od.p_id
 JOIN `order` o ON o.o_id = od.o_id GROUP BY (o_id);
