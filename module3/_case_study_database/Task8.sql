@@ -3,10 +3,10 @@ USE furama;
 -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
 
 -- cách 1!
- SELECT DISTINCT ho_ten   FROM khach_hang kh;
+ SELECT DISTINCT(ho_ten)  FROM khach_hang ;
  
  -- cách 2! 
- SELECT ho_ten FROM khach_hang GROUP BY (khach_hang.ho_ten);
+ SELECT * FROM khach_hang GROUP BY (khach_hang.ho_ten);
  
  -- cách 3!
  SELECT ho_ten FROM khach_hang

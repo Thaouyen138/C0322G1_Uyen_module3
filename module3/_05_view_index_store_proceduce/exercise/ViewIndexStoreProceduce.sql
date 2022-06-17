@@ -12,10 +12,10 @@ product_description VARCHAR(45),
 product_status BIT DEFAULT 1 );
 INSERT INTO product ( product_code, product_name, product_price, product_amount, product_description,product_status) 
 VALUES 
-( '001', 'iphone 13', 23000, 1, '99%', 1),
-( '005', 'iphone 13', 23000, 1, '99%', 1),
+('001', 'iphone 13', 23000, 1, '99%', 1),
+('005', 'iphone 13', 23000, 1, '99%', 1),
 ('002', 'samsung note 8', 23000, 1, '99%', 1),
-( '003', 'iphone X', 13000, 5, '99%', 1),
+('003', 'iphone X', 13000, 5, '99%', 1),
 ('004', 'samsung J7', 8000, 1, '99%', 1)
 ;
 
@@ -35,19 +35,16 @@ CREATE VIEW product_view  AS
  SELECT p.product_code ,p.product_name, p.product_price, p.product_status
  FROM product p;
  
- -- -------------------------------------------------------------------------------------------------------------
+-- -------------------------------------------------------------------------------------------------------------
  -- Tiến hành sửa đổi view
 UPDATE product_view SET product_name ="samsung galaxy s8" WHERE product_code ="004";
  
- -- -------------------------------------------------------------------------------------------------------------
+-- -------------------------------------------------------------------------------------------------------------
 -- Tiến hành xoá view
 DROP VIEW product_view;
 
--- --------------------------------------------------------------------------------------------------------------
+
 -- Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
--- Tạo store procedure thêm một sản phẩm mới
--- Tạo store procedure sửa thông tin sản phẩm theo id
--- Tạo store procedure xoá sản phẩm theo id
 -- --------------------------------------------------------------------------------------------------------------
 delimiter // 
 CREATE PROCEDURE  select_procedure(in product_code VARCHAR(45))
@@ -56,8 +53,10 @@ CREATE PROCEDURE  select_procedure(in product_code VARCHAR(45))
  END 
  // DELIMITER ;
   CALL  select_procedure("001");
- -- -------------------------------------------------------------------------------------------------------------------------
-
+  
+  
+-- -------------------------------------------------------------------------------------------------------------------------
+-- Tạo store procedure thêm một sản phẩm mới
 
 delimiter //
 CREATE PROCEDURE insert_procedure(in product_code varchar(45),
@@ -76,6 +75,7 @@ CALL insert_procedure ("006", "samsung", 12, 1, "new", 1);
  
  
  -- ---------------------------------------------------------------------------------------------------------------------------
+ -- Tạo store procedure sửa thông tin sản phẩm theo id
  delimiter //
 CREATE PROCEDURE update_procedure( in product_id int, `code` varchar(45),
 `name` VARCHAR(50),
@@ -96,7 +96,10 @@ amount INT,
  
  CALL update_procedure( 4,"006","haongu" , 0, 1, "new", 1);
  
-  delimiter //
+  
+-- ---------------------------------------------------------------------------------------------------------------------------
+-- Tạo store procedure xoá sản phẩm theo id
+delimiter //
 CREATE PROCEDURE delete_procedure( in product_id int)
  BEGIN 
  
@@ -105,7 +108,7 @@ CREATE PROCEDURE delete_procedure( in product_id int)
  END //
  delimiter ;
  
- CALL delete_procedure( 4);
+CALL delete_procedure( 4);
  
  
 
