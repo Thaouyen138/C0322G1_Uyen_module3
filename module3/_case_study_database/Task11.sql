@@ -8,4 +8,4 @@ JOIN hop_dong hd ON hd.ma_hop_dong = hdct.ma_hop_dong
 JOIN dich_vu dv ON dv.ma_dich_vu = hd.ma_dich_vu
 JOIN khach_hang kh ON kh.ma_khach_hang = hd.ma_khach_hang
 JOIN loai_khach lk ON lk.ma_loai_khach = kh.ma_loai_khach 
-WHERE lk.ten_loai_khach = 'Diamond' AND (kh.dia_chi = 'Đà Nẵng' OR kh.dia_chi = 'Quảng Trị');
+WHERE lk.ten_loai_khach = 'Diamond' AND (kh.dia_chi = 'Vinh' OR kh.dia_chi = 'Quảng Ngãi');

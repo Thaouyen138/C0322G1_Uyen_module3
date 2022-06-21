@@ -85,10 +85,10 @@ ngay_lam_hop_dong DATE NOT NULL,
 ngay_ket_thuc DATE NOT NULL, 
 tien_dat_coc DOUBLE NOT NULL,
 ma_nhan_vien INT,
-ma_khach_hang INT,
+ma_khach_hang INT ,
 ma_dich_vu INT,
 FOREIGN KEY (ma_nhan_vien) REFERENCES nhan_vien(ma_nhan_vien),
-FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang(ma_khach_hang),
+FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang(ma_khach_hang) on DELETE SET NULL,
 FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu(ma_dich_vu)
 );
 
@@ -98,6 +98,15 @@ ten_dich_vu_di_kem VARCHAR(45) NOT NULL,
 gia DOUBLE NOT NULL,
 don_vi VARCHAR(10) NOT NULL, 
 trang_thai VARCHAR(45)
+);
+
+CREATE TABLE hop_dong_chi_tiet(
+	ma_hop_dong_chi_tiet INT AUTO_INCREMENT PRIMARY KEY,
+    ma_hop_dong INT,
+    ma_dich_vu_di_kem INT,
+    so_luong INT,
+ FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
+FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem)
 );
 
 
