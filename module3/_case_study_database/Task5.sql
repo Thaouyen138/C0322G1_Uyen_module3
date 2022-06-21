@@ -3,11 +3,11 @@ USE furama;
 -- (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá,
 --  với Số Lượng và Giá là từ bảng dich_vu_di_kem, hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng. 
 -- (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
- SELECT kh.ma_khach_hang, kh.ho_ten, lk.ten_loai_khach, hd.ma_hop_dong, dv.ten_dich_vu, hd.ngay_lam_hop_dong,hd.ngay_ket_thuc, 
- sum(dv.chi_phi_thue + (hdct.so_luong * dvdk.gia)) AS "tổng tiền" FROM hop_dong_chi_tiet hdct 
- JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
- JOIN hop_dong hd ON hd.ma_hop_dong = hdct.ma_hop_dong
- JOIN dich_vu dv ON dv.ma_dich_vu = hd.ma_dich_vu
- JOIN khach_hang kh ON hd.ma_khach_hang = kh.ma_khach_hang
- JOIN loai_khach lk ON kh.ma_loai_khach = lk.ma_loai_khach
- GROUP BY ma_khach_hang;
+SELECT khach_hang.ma_khach_hang, khach_hang.ho_ten,loai_khach.ten_loai_khach,hop_dong.ma_hop_dong,dich_vu.ma_dich_vu,hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc, sum(dich_vu.chi_phi_thue+ifnull(hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia,0)) AS tong_tien
+FROM khach_hang
+LEFT JOIN loai_khach  on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach
+LEFT JOIN hop_dong on hop_dong.ma_khach_hang= khach_hang.ma_khach_hang
+LEFT JOIN dich_vu on dich_vu.ma_dich_vu= hop_dong.ma_dich_vu
+LEFT JOIN hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong= hop_dong.ma_hop_dong  
+LEFT JOIN dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
+GROUP BY khach_hang.ma_khach_hang;
