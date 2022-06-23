@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+        body{
+            margin: 0;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .menu-header {
+            background-color: black;
+            color: whitesmoke;
+            font-size: 20px;
+            height: 62px;
+        }
+        .footer{
+            background-color: gray;
+            height: 50px;
+        }
+        .center-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .body{
+            background-color: antiquewhite;
+            height: 400px;
+        }
+
+        .menu-button{
+            height: 100%;
+            margin: 0;
+        }
+        .menu-button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+<div class="row menu-header center-box ">
+    <p class="col-1 menu-button center-box">Logo</p>
+    <p class="col-1 menu-button center-box">Home</p>
+    <p class="col-1 menu-button center-box">About</p>
+    <p class="col-1 menu-button center-box">Project</p>
+    <p class="col-1 menu-button center-box">Logo</p>
+    <p class="col-6"></p>
+    <p class="col-1 menu-button center-box">Logo</p>
+
+</div>
+<div class="row body">
+    <div class="col-2">
+        <ul>
+            <li>link</li>
+            <li>link</li>
+            <li>link</li>
+        </ul>
+    </div>
+    <div class="col-8">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+        <hr>
+        <h3>Test</h3>
+        <p>Lorem ipsum.....</p></div>
+    <div class="col-2">
+        <button style="width: 100px ;height:50px;margin-left: 70px;margin-top: 20px">Ads</button> </br></br>
+        <button style="width: 100px;height: 50px; margin-left: 70px; margin-top: 20px">Ads</button>
+
+    </div>
+</div>
+<div class="row footer center-box">Footer</div>
+</body>
+</html>

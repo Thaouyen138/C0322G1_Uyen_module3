@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>facebook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <style>
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .row::after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-header {
+            width: 100%;
+            height: 56px;
+            background-color: white;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .space-around {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .center-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu {
+            height: 100%;
+            width: 10%;
+            border: 0;
+            background-color: white;
+            font-size: 20px;
+        }
+        .menu2{
+            height: 20px;
+            width: 100px;
+        }
+        .menu:hover {
+            background-color: #f0f2f5;
+        }
+
+        .menu-bar {
+            padding: 0;
+            height: 100%;
+        }
+
+        .content{
+            position: relative;
+            top: 56px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row menu-header">
+        <div class="col-2 menu-bar center-box">
+            <button class="menu">
+                <i class="bi bi-facebook"></i>
+            </button>
+            <input type="text" placeholder="tìm kiếm trên facebook"></i>
+        </div>
+        <div class="col-8 center-box menu-bar">
+            <button class="menu">
+                <i class="bi bi-house"> </i>
+            </button>
+            <button class="menu">
+                <i class="bi bi-people"></i>
+            </button>
+            <button class="menu">
+                <i class="bi bi-caret-right-square"></i>
+            </button>
+            <button class="menu">
+                <i class="bi bi-bank2"></i>
+            </button>
+            <button class="menu">
+                <i class="bi bi-box2"></i>
+            </button>
+
+        </div>
+        <div class="col-2 menu-bar">
+            <button class="menu" style="width: 30%"><i class="bi bi-columns-gap"></i></button>
+            <button class="menu" style="width: 30%"><i class="bi bi-bell-fill"></i></button>
+            <button class="menu" style="width: 30%"><i class="bi bi-chat-text"></i></button>
+        </div>
+    </div>
+    <div class="row content">
+        <div class="col-2">
+
+            <div>Thảo uyên</div>
+            <div><i class="bi bi-people-fill"></i>&emsp; Bạn bè</div>
+            <div><i class="bi bi-stopwatch"></i>&emsp; kỷ niệm</div>
+            <div><i class="bi bi-box2"></i>&emsp; Nhóm</div>
+            <div><i class="bi bi-bank2"></i>&emsp;Marketplace</div>
+            <div><i class="bi bi-controller"></i>&emsp;Chơi game</div>
+            <div><i class="bi bi-chevron-compact-down"></i>&emsp;Xem thêm</div>
+            <hr>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-5">
+                    <div class="col-12">
+                        <h3>Hảo hảo</h3>
+                            <p>Đtrai không mấy em</p>
+                        <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t31.18172-8/22135461_1767633286870002_4199700253732336669_o.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=rAwhV_ze8yoAX9zSZ4E&_nc_ht=scontent.fhan2-3.fna&oh=00_AT8HcaVxojau76iLngmukByAb24kHcGuYKW6vUn05CuH4w&oe=62D99CB1">
+                       <button class="menu2"> <i class="bi bi-hand-thumbs-up"></i> Like</button>
+                       <button class="menu2">
+                           <i class="bi bi-chat-square"></i>Comment
+                       </button>
+                       <button class="menu2">
+                           <i class="bi bi-share"> </i> share
+                       </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+           <p> Được tài trợ</p>
+            <hr>
+            <p>Lời mời kết bạn</p>
+            <i class="bi bi-person-circle"></i>
+            <p>Duy trung</p>
+           <span><button>xác nhận</button>
+               &emsp;
+               <button>Xóa</button>
+           </span>
+            <br>
+            <i class="bi bi-person-circle"></i>
+            <p>Mạnh cường</p>
+            <span><button>xác nhận</button>
+               &emsp;
+               <button>Xóa</button>
+           </span>
+            <br>
+            <i class="bi bi-person-circle"></i>
+            <p>Lưu hòa</p>
+            <span><button>xác nhận</button>
+               &emsp;
+               <button>Xóa</button>
+           </span>
+            <hr>
+            <span>
+            <p>Người liên hệ &emsp;&emsp;
+            <i class="bi bi-camera-reels"></i>&emsp;
+            <i class="bi bi-search"></i>&emsp;
+            <i class="bi bi-three-dots"></i>
+                </p>
+            </span>
+            <span><p>
+                <i class="bi bi-person-circle"></i>
+            Mạnh cường</p></span>
+            <span><p>
+                <i class="bi bi-person-circle"></i>
+            Mạnh cường</p></span>
+            <span><p>
+                <i class="bi bi-person-circle"></i>
+            Mạnh cường</p></span>
+            <span><p>
+                <i class="bi bi-person-circle"></i>
+            Mạnh cường</p></span>
+            <span><p>
+                <i class="bi bi-person-circle"></i>
+            Mạnh cường</p></span>
+            <span><p>
+                <i class="bi bi-person-circle"></i>
+            Mạnh cường</p></span>
+            <span><p>
+                <i class="bi bi-person-circle"></i>
+            Mạnh cường</p></span>
+        </div>
+    </div>
+</body>
+</html>
