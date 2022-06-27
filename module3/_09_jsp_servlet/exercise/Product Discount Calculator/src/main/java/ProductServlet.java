@@ -20,17 +20,13 @@ public class ProductServlet extends HttpServlet {
         }
         double discountAmount = price * percent * 0.01;
         double discountPrice = price - discountAmount;
-        request.setAttribute("description", description);
-        request.setAttribute("price", price);
-        request.setAttribute("percent", percent);
         request.setAttribute("discountAmount", discountAmount);
         request.setAttribute("discountPrice", discountPrice);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("result.jsp");
-        requestDispatcher.forward(request, response);
+        request.getRequestDispatcher("result.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("result.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("form.jsp");
         requestDispatcher.forward(request, response);
     }
 }

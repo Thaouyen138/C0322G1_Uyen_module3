@@ -12,27 +12,10 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form action="/result" method="post">
-    <h1>Product Discount </h1>
-    <div class="form-floating mb-3">
-        <label>Description</label>
-        <input type="text" class="form-control" name="description" placeholder="mô tả sản phẩm">
-
-    </div>
-    <div class="form-floating mb-3">
-        <label>Price</label>
-        <input type="text" class="form-control" name="price" placeholder="giá niêm yết">
-    </div>
-    <div class="form-floating mb-3">
-        <label>Discount percent</label>
-        <input type="text" class="form-control" name="percent" placeholder="tỷ lệ chiết khấu">
-    </div>
-    <button type="submit" class="btn btn-danger"> sumit</button>
-</form>
-<label>Lượng chiết khấu</label>
-<div class="text-danger">${discountAmount}</div>
-<label>Giá sau khi đã được chiết khấu</label>
-<div class="text-danger">${discountPrice}</div>
+<h1>Lượng chiết khấu</h1>
+<h3 class="text-danger">${discountAmount}</h3>
+<h1>Giá sau khi đã được chiết khấu</h1>
+<h3 class="text-danger">${discountPrice}</h3>
 </body>
 <script src="/bootstrap/js/bootstrap.bundle.js"></script>
 </html>
