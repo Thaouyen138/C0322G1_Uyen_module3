@@ -51,9 +51,9 @@
             </tr>
 
         </table>
-        <input type="submit" value="Caculator" style="background-color: red">
+        <button type="submit" value="Caculator" class="btn btn-danger">
     </form>
-        <h3 style="color: red">result:</h3>
+        <h3 style="color: white">result:</h3>
         <c:out value="${result}"></c:out>
 </div>
 
