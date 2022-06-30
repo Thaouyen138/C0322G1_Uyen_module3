@@ -1,17 +1,18 @@
 package service;
 
-import model.User;
+
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 
 import java.util.List;
 
 public interface IUserService {
     List<User> findAll();
 
-    void create(User user);
+    void create(BIConversion.User user);
 
     void edit();
 
-    List<User> findByName(String name);
+    List<BIConversion.User> findByName(String name);
 
     void delete();
 

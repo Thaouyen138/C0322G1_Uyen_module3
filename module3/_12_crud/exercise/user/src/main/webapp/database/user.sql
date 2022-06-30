@@ -1,0 +1,1 @@
+update users set status_delete = 1 where id = ?;
