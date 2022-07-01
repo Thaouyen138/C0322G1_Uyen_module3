@@ -19,17 +19,25 @@ public class UserServiceImpl implements IUserService{
     }
 
     @Override
-    public void edit() {
-
+    public void edit(User user) {
+        userRepository.edit(user);
     }
 
     @Override
-    public List<User> findByName(String name) {
-        return userRepository.findByName(name);
+    public User findById(int id) {
+        return userRepository.findById(id);
+    }
+
+    @Override
+    public List<User> findByName(String name , String country) {
+
+        return userRepository.findByName(name , country);
     }
 
     @Override
     public void delete(int id) {
         userRepository.delete(id);
     }
+
+
 }

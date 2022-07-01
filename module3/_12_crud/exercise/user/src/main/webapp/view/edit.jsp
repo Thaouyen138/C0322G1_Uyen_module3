@@ -22,25 +22,27 @@
 </head>
 <body>
 <div class="row bg-primary conter-box text-white ">
-    <h3> Add new user</h3>
+    <h3> Edit user</h3>
 </div>
 
 
-<form action="/user?action=create" method="post" class="container">
+<form action="/user?action=edit" method="post" class="container">
+
+        <input type="hidden" class="form-control" name="id" value="${users.id}">
+
     <div class="mb-3">
         <label class="form-label">Name User</label>
-        <input type="text" class="form-control" name="name" aria-describedby="emailHelp">
+        <input type="text" class="form-control" name="name" value="${users.name}">
     </div>
     <div class="mb-3">
         <label class="form-label">Email</label>
-        <input type="text" class="form-control" name="email">
+        <input type="text" class="form-control" name="email" value="${users.email}">
     </div>
     <div class="mb-3">
         <label class="form-label">Country</label>
-        <input type="text" class="form-control" name="country">
+        <input type="text" class="form-control" name="country" value="${users.country}">
     </div>
-    <button type="submit" class="btn btn-primary float-right">Submit</button>
-    <a href="/user" class="btn btn-primary float-left" > Back Home</a>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 </body>

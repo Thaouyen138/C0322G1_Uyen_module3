@@ -9,9 +9,14 @@ public interface IUserRepository {
 
     void create(User user);
 
-    void edit();
+    void edit(User user);
 
-    List<User> findByName(String name);
+    List<User> findByName(String name, String country);
 
     void delete(int id);
+
+
+
+    User findById(int id);
+
 }

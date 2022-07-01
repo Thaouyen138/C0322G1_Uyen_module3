@@ -30,8 +30,9 @@
     </div>
 <div class="col-md-4 conter-box">
  <div>
-     <form action="/user" class="conter-box">
-         <input type="text" name="nameSearch">
+     <form action="/user?action=search" class="conter-box">
+         <input type="text" name="nameSearch" placeholder="Enter Name">
+         <input type="text" name="countrySearch" placeholder="Enter Country">
          <input type="submit" name="action" value="search">
      </form>
  </div>
@@ -41,26 +42,28 @@
     <table class="table container">
         <thead>
         <tr>
-            <th>id</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Email</th>
             <th>Country</th>
             <th>Delete</th>
+            <th>Edit</th>
         </tr>
         </thead>
 
-        <c:forEach items="${userLists}" var="u">
-            <c:if test="${u.statusDelete == 0}">
+        <c:forEach items="${userLists}" var="u" varStatus="userStatus">
             <tr>
-                <td>${u.id}</td>
+                <td>${userStatus.count}</td>
                 <td>${u.name}</td>
                 <td>${u.email}</td>
                 <td>${u.country}</td>
                 <td>
                     <a href="/user?action=delete&id=${u.id}" class="btn btn-success">Delete</a>
                 </td>
+                <td>
+                    <a href="/user?action=edit&id=${u.id}" class="btn btn-success">Edit</a>
+                </td>
             </tr>
-            </c:if>
         </c:forEach>
 
     </table>
@@ -71,6 +74,9 @@
             </a>
         </div>
     </div>
+<div>
+
+</div>
     <c:if test="${msg != null}">
         <div class="text-success font-weight-bold conter-box">${msg}</div>
     </c:if>

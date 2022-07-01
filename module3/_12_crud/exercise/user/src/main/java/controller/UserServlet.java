@@ -29,6 +29,7 @@ public class UserServlet extends HttpServlet {
                 addNew(request, response);
                 break;
             case "edit":
+                edit(request,response);
                 break;
             case "search":
                 break;
@@ -36,6 +37,27 @@ public class UserServlet extends HttpServlet {
                 showListUser(request, response);
                 break;
         }
+    }
+
+    private void edit(HttpServletRequest request, HttpServletResponse response) {
+        int id=Integer.parseInt(request.getParameter("id"));
+        String name=request.getParameter("name");
+        String email=request.getParameter("email");
+        String country=request.getParameter("country");
+        User user=new User(id,name,email,country);
+        iUserService.edit(user);
+        request.setAttribute("msg", "Add new successful!");
+        //findAll()
+        userList = iUserService.findAll();
+        request.setAttribute("userLists",userList);
+        try {
+            request.getRequestDispatcher("/view/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+    }
     }
 
     private void addNew(HttpServletRequest request, HttpServletResponse response) {
@@ -70,18 +92,49 @@ public class UserServlet extends HttpServlet {
                 showFromCreate(request, response);
                 break;
             case "edit":
+                showFormEdit(request,response);
                 break;
             case "delete":
                 deleteById(request,response);
                 break;
             case "search":
-                showFromByName(request,response);
+                search(request,response);
                 break;
+
+
             default:
                 showListUser(request, response);
                 break;
     }
 }
+
+    private void showFormEdit(HttpServletRequest request, HttpServletResponse response) {
+        Integer id= Integer.valueOf(request.getParameter("id"));
+        User user=this.iUserService.findById(id);
+        request.setAttribute("users", user);
+        try {
+            request.getRequestDispatcher("view/edit.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void search(HttpServletRequest request, HttpServletResponse response) {
+        String nameSearch=request.getParameter("nameSearch");
+
+        String countrySearch=request.getParameter("countrySearch");
+        userList = iUserService.findByName(nameSearch, countrySearch);
+        request.setAttribute("userLists",userList);
+        try {
+            request.getRequestDispatcher("/view/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void deleteById(HttpServletRequest request, HttpServletResponse response) {
         int id=Integer.parseInt(request.getParameter("id"));
@@ -101,18 +154,8 @@ public class UserServlet extends HttpServlet {
 
     }
 
-    private void showFromByName(HttpServletRequest request, HttpServletResponse response) {
-        String nameSearch=request.getParameter("nameSearch");
-        userList = iUserService.findByName(nameSearch);
-        request.setAttribute("userLists",userList);
-        try {
-            request.getRequestDispatcher("/view/list.jsp").forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
+
 
     private void showFromCreate(HttpServletRequest request, HttpServletResponse response) {
 

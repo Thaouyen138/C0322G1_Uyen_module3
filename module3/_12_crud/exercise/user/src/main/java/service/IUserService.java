@@ -10,10 +10,14 @@ public interface IUserService {
 
     void create(User user);
 
-    void edit();
+    void edit(User user);
 
-    List<User> findByName(String name);
+    User findById(int id);
+
+    List<User> findByName(String name ,String country);
 
     void delete(int id);
+
+
 
 }
