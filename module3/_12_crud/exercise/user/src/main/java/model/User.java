@@ -5,6 +5,7 @@ public class User {
     private String name;
     private String email;
     private String country;
+    private int typeId;
     private int statusDelete;
 
     public User() {
@@ -24,11 +25,29 @@ public class User {
     }
 
 
+    public User(String name, String email, String country, int typeId) {
+
+        this.name = name;
+        this.email = email;
+        this.country = country;
+        this.typeId = typeId;
+
+    }
+
     public User(int id, String name, String email, String country, int statusDelete) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.country = country;
+        this.statusDelete = statusDelete;
+    }
+
+    public User(int id, String name, String email, String country, int typeId, int statusDelete) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.country = country;
+        this.typeId = typeId;
         this.statusDelete = statusDelete;
     }
 
@@ -46,6 +65,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
     }
 
     public String getName() {

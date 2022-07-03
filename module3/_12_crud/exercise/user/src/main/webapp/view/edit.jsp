@@ -42,6 +42,16 @@
         <label class="form-label">Country</label>
         <input type="text" class="form-control" name="country" value="${users.country}">
     </div>
+    <div class="mb-3">
+        <label class="form-label">Type User</label>
+        <select name="type_id" class="form-control">
+            <c:forEach items="${typeUserList}" var="type">
+                <option value="${type.id}">
+                        ${type.type}
+                </option>
+            </c:forEach>
+        </select>
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
