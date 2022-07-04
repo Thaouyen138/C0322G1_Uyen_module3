@@ -65,7 +65,7 @@
                 <td>${u.name}</td>
                 <td>${u.email}</td>
                 <td>${u.country}</td>
-                <c:forEach items="${typeUserLis}" var="type">
+                <c:forEach items="${typeUserList}" var="type">
                     <c:if test="${type.id == u.typeId}">
                         <td>${type.type}</td>
                     </c:if>
