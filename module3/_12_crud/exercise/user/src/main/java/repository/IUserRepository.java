@@ -15,8 +15,6 @@ public interface IUserRepository {
 
     void delete(int id);
 
-
-
     User findById(int id);
 
 }

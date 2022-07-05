@@ -129,7 +129,6 @@ public class UserRepositoryImpl implements IUserRepository {
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_ID);
             preparedStatement.setInt(1,idS);
             ResultSet resultSet = preparedStatement.executeQuery();
-
       resultSet.next();
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -138,7 +137,6 @@ public class UserRepositoryImpl implements IUserRepository {
                 int typeId= resultSet.getInt("type_id");
                 int statusDelete = resultSet.getInt("status_delete");
                 user = new User(id, name, email, country, typeId,statusDelete);
-
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

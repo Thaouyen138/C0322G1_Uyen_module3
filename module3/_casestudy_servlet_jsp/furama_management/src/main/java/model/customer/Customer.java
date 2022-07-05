@@ -1,7 +1,7 @@
 package model.customer;
 
 public class Customer {
-    private Integer id;
+    private String id;
     private Integer customerTypeId;
     private String name;
     private String dateOfBirth;
@@ -27,7 +27,7 @@ public class Customer {
         this.statusDelete = statusDelete;
     }
 
-    public Customer(Integer id, Integer customerTypeId, String name, String dateOfBirth, Integer gender, String idCard, String phoneNumber, String email, String address, Integer statusDelete) {
+    public Customer(String id, Integer customerTypeId, String name, String dateOfBirth, Integer gender, String idCard, String phoneNumber, String email, String address) {
         this.id = id;
         this.customerTypeId = customerTypeId;
         this.name = name;
@@ -37,14 +37,24 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.statusDelete = statusDelete;
     }
 
-    public Integer getId() {
+    public Customer(Integer customerTypeId, String name, String dateOfBirth, Integer gender, String idCard, String phoneNumber, String email, String address) {
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -117,6 +127,19 @@ public class Customer {
     }
 
     public void setStatusDelete(Integer statusDelete) {
+        this.statusDelete = statusDelete;
+    }
+
+    public Customer(String id, Integer customerTypeId, String name, String dateOfBirth, Integer gender, String idCard, String phoneNumber, String email, String address, Integer statusDelete) {
+        this.id = id;
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
         this.statusDelete = statusDelete;
     }
 }

@@ -1,0 +1,1 @@
+select * from customer where  status_delete = 0 order by date_of_birth desc;

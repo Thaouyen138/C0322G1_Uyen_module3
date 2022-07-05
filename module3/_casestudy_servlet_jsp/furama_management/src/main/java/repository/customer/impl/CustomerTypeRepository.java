@@ -2,7 +2,7 @@ package repository.customer.impl;
 
 import model.customer.CustomerType;
 import repository.customer.BaseRepository;
-import repository.customer.ICustomerTypeRepository;
+import repository.customer.itf.ICustomerTypeRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerTypeRepository implements ICustomerTypeRepository {
-    List<CustomerType> customerTypeList = new ArrayList<>();
     private final String SELECT = "SELECT * FROM customer_type";
 
     @Override
     public List<CustomerType> findAll() {
+        List<CustomerType> customerTypeList = new ArrayList<>();
         Connection connection = new BaseRepository().getConnection();
         CustomerType customerType = null;
         try {
